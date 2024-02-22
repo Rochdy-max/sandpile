@@ -1,2 +1,2 @@
 # sandpile
-Exemple of C written solution for the sandpile problem
+Example of C written solution for the sandpile problem
