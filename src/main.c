@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <sandpile.h>
 
 int main(void)
 {
@@ -57,4 +58,15 @@ int main(void)
             printf("%d", mtx[i][j]);
         printf("\n");
     }
+
+    sandpile_t pile = create_sandpile(h, w, cell_maxval, mtx);
+
+    printf("\n");
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++)
+            printf("%d", pile.mtx[i][j]);
+        printf("\n");
+    }
+
+    destroy_sandpile(&pile);
 }
