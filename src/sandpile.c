@@ -65,7 +65,7 @@ void normalize_sandpile(sandpile_t* pile)
                 continue;
             }
             // Go back to left cell if it becomes unstable 
-            int left_index = 0;
+            int left_index = 3;
             row = neighbors[left_index].row, col = neighbors[left_index].col;
             if (cell_is_in_sandpile(pile, row, col) && cell_is_unstable(pile, row, col)) {
                 j--;
