@@ -80,3 +80,15 @@ void normalize_sandpile(sandpile_t* pile)
         }
     }
 }
+
+void add_sandpile(sandpile_t* pile, sandpile_t* other)
+{
+    if (pile->height != other->height || pile->width != other->width) {
+        // Invalid case (normally an exception to raise)
+        return;
+    }
+    for (int i = 0; i < pile->height; i++)
+        for (int j = 0; j < pile->width; j++)
+            pile->mtx[i][j] += other->mtx[i][j]; // Addition cells on same position
+    normalize_sandpile(pile);
+}
