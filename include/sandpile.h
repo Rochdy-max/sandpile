@@ -20,3 +20,4 @@ bool cell_is_unstable(sandpile_t* pile, int row, int col);
 bool cell_is_in_sandpile(sandpile_t* pile, int row, int col);
 void normalize_sandpile(sandpile_t* pile);
 void add_sandpile(sandpile_t* pile, sandpile_t* other);
+void dump_sandpile(sandpile_t* pile);

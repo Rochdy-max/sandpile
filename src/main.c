@@ -10,21 +10,22 @@ int main(void)
 
     printf("Enter matrix height: ");
     scanf("%d", &h);
-    // Check height value
+    // TODO: Handle EOF & Check height value
     printf("Enter matrix width: ");
     scanf("%d", &w);
-    // Check width value
+    // TODO: Handle EOF & Check width value
     printf("Enter cell maximum value (1-8): ");
     scanf("%d", &cell_maxval);
-    // Check cell_maxval value
+    // TODO: Handle EOF & Check cell_maxval value
 
     int **mtx = malloc(sizeof(int*) * h);
 
     printf("\nCreate your sandpile:\n");
     for (int i = 0; i < h; i++) {
-        printf("Line %d: ", i + 1);
+        printf("Line %2d: ", i + 1);
         char row[w + 1];
         scanf("%s", row);
+        // TODO: Handle EOF
         size_t nb_bytes = strlen(row);
         if (nb_bytes < w) {
             i--;
@@ -62,11 +63,7 @@ int main(void)
     sandpile_t pile = create_sandpile(h, w, cell_maxval, mtx);
 
     printf("\n");
-    for (int i = 0; i < h; i++) {
-        for (int j = 0; j < w; j++)
-            printf("%d", pile.mtx[i][j]);
-        printf("\n");
-    }
+    dump_sandpile(&pile);
 
     destroy_sandpile(&pile);
 }

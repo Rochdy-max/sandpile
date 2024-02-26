@@ -92,3 +92,13 @@ void add_sandpile(sandpile_t* pile, sandpile_t* other)
             pile->mtx[i][j] += other->mtx[i][j]; // Addition cells on same position
     normalize_sandpile(pile);
 }
+
+void dump_sandpile(sandpile_t* pile)
+{
+    printf("Height: %d, Width: %d, Cell Maximal Value: %d\n", pile->height, pile->width, pile->cell_maxval);
+    for (int i = 0; i < pile->height; i++) {
+        for (int j = 0; j < pile->width; j++)
+            printf("%d", pile->mtx[i][j]);
+        printf("\n");
+    }
+}
